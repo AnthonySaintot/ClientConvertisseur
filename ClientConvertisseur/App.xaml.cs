@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using ClientConvertisseur.Views;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -43,7 +44,10 @@ namespace ClientConvertisseur
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
             m_window = new MainWindow();
+            Frame rootFrame = new Frame();
+            this.m_window.Content = rootFrame;
             m_window.Activate();
+            rootFrame.Navigate(typeof(ConvertisseurEuroPage));
         }
 
         private Window m_window;
